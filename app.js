@@ -5,9 +5,6 @@ const suits = ["spades", "hearts", "clubs", "diamonds"];
 const values = ["14", "13", "12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2",];
 let deck = new Array();
 
-
-function PlayGame() {
-
     
 
     function BuildDeck() {
@@ -44,8 +41,6 @@ function PlayGame() {
             console.log("P2 = " + key, playerTwoHand[key]);
         }
     }
-
-    BuildDeck();
 
 
 
@@ -109,10 +104,10 @@ function PlayGame() {
 
 
 
-};
+
 
 $("#playBtn").click(function () {
-    PlayGame();
+    BuildDeck();
 })
 
 
