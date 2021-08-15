@@ -103,46 +103,49 @@ function Draw() { // removes last index from each player's hand
             War();
         }
 
+        function War() { // if opponents match card values, the last 4 cards of their hand are drawn and the 4th card is used to play, winner takes all cards on table (8 including their own)
+
+            let p1WarMove = playerOneHand.slice(-4);
+            let p2WarMove = playerTwoHand.slice(-4);
+            
+    
+            
+            console.log(`${p1WarMove[3].Value} of ${p1WarMove[3].Suit} |:| ${p2WarMove[3].Value} of ${p2WarMove[3].Suit}`);
+    
+            if (p1WarMove[3].Value > p2WarMove[3].Value) {
+                console.log("Player One Wins This War!");
+                playerTwoHand.splice(-4);
+                playerOneHand.unshift(p1WarMove, p2WarMove, p2WarMove[3], p2WarMove[2], p2WarMove[1], p2WarMove[0]);
+                console.log(`Player One has ${playerOneHand.length} cards.`);
+                console.log(`Player Two has ${playerTwoHand.length} cards.`);
+    
+            }
+            else if (p1WarMove[3].Value < p2WarMove[3].Value) {
+                console.log("Player Two Wins This War!")
+                playerOneHand.splice(-4);
+                playerTwoHand.unshift(p2WarMove, p1WarMove, p1WarMove[3], p1WarMove[2], p1WarMove[1], p1WarMove[0])
+                console.log(`Player One has ${playerOneHand.length} cards.`);
+                console.log(`Player Two has ${playerTwoHand.length} cards.`);
+            }
+            else if (p1WarMove[3].Value == p2WarMove[3].Value) {
+                console.log("War Again!");
+                // War();
+            }
+    
+    
+    
+    
+    
+    
+        }
+
 
 
 
 
     };
 
-    function War() { // if opponents match card values, the last 4 cards of their hand are drawn and the 4th card is used to play, winner takes all cards on table (8 including their own)
-
-        let p1WarMove = playerOneHand.slice(-4);
-        let p2WarMove = playerTwoHand.slice(-4);
-
-        console.log(p1WarMove, p2WarMove);
-        console.log(`${p1WarMove[3].Value} of ${p1WarMove[3].Suit} |:| ${p2WarMove[3].Value} of ${p2WarMove[3].Suit}`);
-
-        if (p1WarMove[3].Value > p2WarMove[3].Value) {
-            console.log("Player One Wins This War!");
-            playerTwoHand.splice(-4);
-            playerOneHand.unshift(p1WarMove[3], p1WarMove[2], p1WarMove[1], p1WarMove[0], p2WarMove[3], p2WarMove[2], p2WarMove[1], p2WarMove[0]);
-            console.log(`Player One has ${playerOneHand.length} cards.`);
-            console.log(`Player Two has ${playerTwoHand.length} cards.`);
-
-        }
-        else if (p1WarMove[3].Value < p2WarMove[3].Value) {
-            console.log("Player Two Wins This War!")
-            playerOneHand.splice(-4);
-            playerTwoHand.unshift(p2WarMove[3], p2WarMove[2], p2WarMove[1], p2WarMove[0], p1WarMove[3], p1WarMove[2], p1WarMove[1], p1WarMove[0])
-            console.log(`Player One has ${playerOneHand.length} cards.`);
-            console.log(`Player Two has ${playerTwoHand.length} cards.`);
-        }
-        else if (p1WarMove[3].Value == p2WarMove[3].Value) {
-            console.log("War Again!");
-            War();
-        }
-
-
-
-
-
-
-    }
+    
 
 
 
