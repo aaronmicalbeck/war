@@ -31,68 +31,64 @@ function BuildDeck() {
 
 }
 
-    // splits deck array into 2 and pushes to players' hands
+// splits deck array into 2 and pushes to players' hands
 
-    function Deal(){
+function Deal() {
 
-        let deck = BuildDeck();
+    let deck = BuildDeck();
 
-        let half = Math.ceil(deck.length / 2);
+    let half = Math.ceil(deck.length / 2);
 
-        let playerOneHand = deck.slice(0, half);
-        let playerTwoHand = deck.slice(-half);
-    
-        for (const key in playerOneHand) {
-            console.log("P1 = " + key, playerOneHand[key]);
-        }
-        for (const key in playerTwoHand) {
-            console.log("P2 = " + key, playerTwoHand[key]);
-        }
+    let playerOneDeal = deck.slice(0, half);
+    let playerTwoDeal = deck.slice(-half);
 
-    }
-
-    
+    let playerOneHand = playerOneDeal,
+        playerTwoHand = playerTwoDeal;
 
 
+    console.log("Hands have been dealt!");
+    return [playerOneHand, playerTwoHand];
 
 
-
-
-
-
-
+}
 
 function Draw() { // removes last index from each player's hand
+
+    let hands = Deal();
+
+    const playerOneHand = hands[0],
+        playerTwoHand = hands[1];
+
 
     let p1Move = playerOneHand.pop();
     let p2Move = playerTwoHand.pop();
 
-    console.log("Player One's move = " + p1Move);
-    console.log("Player Two's move = " + p2Move);
+    console.log(p1Move.Value, p2Move.Value);
+
+
 
     CheckCards();
 
-    console.log(`Player Two has ${playerOneHand.length} cards.`);
+    console.log(`Player One has ${playerOneHand.length} cards.`);
     console.log(`Player Two has ${playerTwoHand.length} cards.`)
-    console.log(`P1 = ${playerOneHand}`);
-    console.log(`P2 = ${playerTwoHand}`);
+
 
     function CheckCards() { // compares each player's move & adds cards to first index of winning player's hand
 
         console.log("Checking Cards!");
 
-        if (p1Move > p2Move) {
+        if (p1Move.Value > p2Move.Value) {
             console.log("Player One Wins!");
             playerOneHand.unshift(p1Move, p2Move)
 
         }
-        else if (p1Move < p2Move) {
+        else if (p1Move.Value < p2Move.Value) {
             console.log("Player Two Wins!")
             playerTwoHand.unshift(p2Move, p1Move);
 
         }
 
-        else if (p1Move == p2Move) {
+        else if (p1Move.Value == p2Move.Value) {
             console.log("WAR!!!")
         }
 
@@ -105,13 +101,7 @@ function Draw() { // removes last index from each player's hand
 
 };
 
-
-
-$("#playBtn").click(function () {
-    BuildDeck();
-})
-
-$("#dealBtn").click(function(){
+$("#dealBtn").click(function () {
     Deal();
 })
 
