@@ -39,8 +39,8 @@ function BuildDeck() {
 // splits deck array into 2 and returns separate hands
 
 function Deal() {
-    
-    
+
+
 
     let half = Math.ceil(deck.length / 2);
 
@@ -59,7 +59,7 @@ function Deal() {
 
 function Draw() { // removes last index from each player's hand
 
-    
+
 
     let playerOneHand = hands[0],
         playerTwoHand = hands[1];
@@ -91,7 +91,7 @@ function Draw() { // removes last index from each player's hand
             playerOneHand.unshift(p1Move, p2Move);
             console.log(`P1 ${playerOneHand.length} cards.`);
             console.log(`P2 ${playerTwoHand.length} cards.`);
-            
+
 
         }
         else if (p1Move.Value < p2Move.Value) {
@@ -99,18 +99,18 @@ function Draw() { // removes last index from each player's hand
             playerTwoHand.unshift(p2Move, p1Move);
             console.log(`P1 ${playerOneHand.length} cards.`);
             console.log(`P2 ${playerTwoHand.length} cards.`);
-            
+
 
         }
 
-        else if (p1Move.Value == p2Move.Value) { 
+        else if (p1Move.Value == p2Move.Value) {
             console.log("WAR!");
-            
+
             War();
         }
 
         console.log(hands);
-        
+
 
         function War() { // if opponents match card values, the last 4 cards of their hand are drawn and the 4th card is used to play, winner takes all cards on table (8 including their own)
 
@@ -125,8 +125,8 @@ function Draw() { // removes last index from each player's hand
 
             if (p1WarMove[3].Value > p2WarMove[3].Value) {
                 console.log("P1 Wins");
-                playerTwoHand.splice(playerTwoHand.length-4);
-                playerOneHand.splice(playerOneHand.length-4);
+                playerTwoHand.splice(playerTwoHand.length - 4);
+                playerOneHand.splice(playerOneHand.length - 4);
                 playerOneHand.unshift(p1Move, p2Move, p1WarMove[3], p1WarMove[2], p1WarMove[1], p1WarMove[0], p2WarMove[3], p2WarMove[2], p2WarMove[1], p2WarMove[0]);
                 console.log(`P1 ${playerOneHand.length} cards.`);
                 console.log(`P2 ${playerTwoHand.length} cards.`);
@@ -134,8 +134,8 @@ function Draw() { // removes last index from each player's hand
             }
             else if (p1WarMove[3].Value < p2WarMove[3].Value) {
                 console.log("P2 Wins!");
-                playerOneHand.splice(playerOneHand.length-4);
-                playerTwoHand.splice(playerTwoHand.length-4);
+                playerOneHand.splice(playerOneHand.length - 4);
+                playerTwoHand.splice(playerTwoHand.length - 4);
                 playerTwoHand.unshift(p2Move, p1Move, p2WarMove[3], p2WarMove[2], p2WarMove[1], p2WarMove[0], p1WarMove[3], p1WarMove[2], p1WarMove[1], p1WarMove[0])
                 console.log(`P1 ${playerOneHand.length} cards.`);
                 console.log(`P2 ${playerTwoHand.length} cards.`);
@@ -188,11 +188,6 @@ function Draw() { // removes last index from each player's hand
 
 
 };
-
-
-
-
-
 
 $("#dealBtn").click(function () {
     Deal();
