@@ -133,6 +133,7 @@ function Draw() { // removes last index from each player's hand
 
         if (p1Move.Value > p2Move.Value) {
             console.log("Player One Wins!");
+            document.getElementById("moveResult").innerHTML = "Player One Wins!";
             playerOneHand.unshift(p1Move, p2Move);
             console.log(`P1 ${playerOneHand.length} cards.`);
             console.log(`P2 ${playerTwoHand.length} cards.`);
@@ -141,6 +142,7 @@ function Draw() { // removes last index from each player's hand
         }
         else if (p1Move.Value < p2Move.Value) {
             console.log("Player Two Wins!")
+            document.getElementById("moveResult").innerHTML = "Player Two Wins!";
             playerTwoHand.unshift(p2Move, p1Move);
             console.log(`P1 ${playerOneHand.length} cards.`);
             console.log(`P2 ${playerTwoHand.length} cards.`);
@@ -150,6 +152,7 @@ function Draw() { // removes last index from each player's hand
 
         else if (p1Move.Value == p2Move.Value) {
             console.log('%cWAR!!', 'background: #222; color: #FF4200');
+            document.getElementById("moveResult").innerHTML = "WAR!";
            
 
             War();
