@@ -1,12 +1,95 @@
-#header {
-  position: relative;
-  flex-wrap: wrap;
-  text-align: center;
+body, html{
+    height: 100%;
+    width: 100%;
+    
 }
 
-#buttonRow {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.container-1 {
+    width: 100%;
+    flex-direction: column;
+    margin: none;
+
+}
+
+
+
+#p1Box, #p2Box, #playTable, #header, #footer{
+    text-align: center;
+    border: black 1px solid;
+    padding: 5px;
+    width: 100%;
+}
+
+#p1Box{
+    margin-top: 4rem;
+}
+
+#playTable{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    flex-direction: column;
+
+}
+
+#card{
+
+}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+#header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: none;
+    padding: none;
+}
+
+
+.card
+{
+	padding: 10px;
+	border: solid 1px #808080;
+	background-color: white;
+	display: inline-block;
+	border-radius: 10px;
+	font-size: 14pt;
+	text-align: center;
+	color:black;
+	margin: 3px;
+}
+
+
+
+.card .value{
+	font-size:15pt;
+	font-family: sans-serif;
+}
+
+.card .suit
+{
+	height: 100px;
+	width: 90px;
+}
+
+.card .diamonds
+{
+	background-position-y: 100px;
+}
+
+.card .hearts
+{
+	background-position-x: 90px;
+}
+
+.card .clubs
+{
+	background-position-x:90px;
+	background-position-y:100px;
 }

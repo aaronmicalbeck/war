@@ -71,7 +71,52 @@ function Draw() { // removes last index from each player's hand
 
 
     console.table(`Player One: ${p1Move.Value} of ${p1Move.Suit} |:| Player Two: ${p2Move.Value} of ${p2Move.Suit}`);
+    
+    function renderP1Move(){
 
+        document.getElementById("p1Move").innerHTML = "";
+
+        var card = document.createElement("div");
+		var value = document.createElement("div");
+		var suit = document.createElement("div");
+		card.className = "card";
+		value.className = "value";
+		suit.className = "suit " + p1Move.Suit;
+
+		value.innerHTML = p1Move.Value;
+		card.appendChild(value);
+		card.appendChild(suit);
+
+
+
+		$(`#p1Move`).append(card);
+       
+        
+    }
+
+    function renderP2Move(){
+
+        document.getElementById("p2Move").innerHTML = "";
+
+        var card = document.createElement("div");
+		var value = document.createElement("div");
+		var suit = document.createElement("div");
+		card.className = "card";
+		value.className = "value";
+		suit.className = "suit " + p2Move.Suit;
+
+		value.innerHTML = p2Move.Value;
+		card.appendChild(value);
+		card.appendChild(suit);
+
+		$(`#p2Move`).append(card);
+        
+        
+        
+    }
+
+    renderP1Move();
+    renderP2Move();
     CheckCards();
 
 
@@ -104,7 +149,8 @@ function Draw() { // removes last index from each player's hand
         }
 
         else if (p1Move.Value == p2Move.Value) {
-            console.log("WAR!");
+            console.log('%cWAR!!', 'background: #222; color: #FF4200');
+           
 
             War();
         }
