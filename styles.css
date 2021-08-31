@@ -121,6 +121,7 @@ body, html{
     font-family: 'Noto Sans', sans-serif;
     font-size: 25px;
     color: whitesmoke;
+    touch-action: manipulation;
 }
 
 
