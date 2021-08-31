@@ -38,6 +38,7 @@ body, html{
 #moveResult{
     color: #f3a712;
     font-family: 'Noto Sans', sans-serif;
+    text-shadow: 1px 1px gray;
 }
 
 
@@ -64,7 +65,7 @@ body, html{
 .card
 {
 	padding: 10px;
-	border: solid 1px #808080;
+	border: solid 5px whitesmoke;
 	background-color: #66717e;
 	display: inline-block;
 	border-radius: 10px;
