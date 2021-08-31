@@ -3,6 +3,7 @@ body, html{
     max-width: 100%;
     background-color: #d4d6b9;
     overflow: hidden;
+    touch-action: manipulation;
     
 }
 
