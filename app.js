@@ -1,7 +1,7 @@
 
 // Global Variables ////////////////
 
-const suits = ["Spades", "Hearts", "Clubs", "Diamonds"];
+const suits = ["♠", "♥", "♣", "♦"];
 const values = [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
 let deck = BuildDeck();
 let hands = Deal();
@@ -78,25 +78,29 @@ function Draw() { // removes last index from each player's hand
 
         var card = document.createElement("div");
 		var value = document.createElement("div");
-		var suit = document.createElement("div");
+        var value2 = document.createElement("div");
+        var suit = document.createElement("div");
+
 		card.className = "card";
 		value.className = "value";
+        value2.className = "value2";
 		suit.className = "suit " + p1Move.Suit;
 
 		value.innerHTML = p1Move.Value;
+        value2.innerHTML = p1Move.Value;
         suit.innerHTML = p1Move.Suit;
 
         
 		card.appendChild(value);
 		card.appendChild(suit);
-
+        card.appendChild(value2);
 
 
 		$(`#p1Move`).append(card);
         
             
               gsap.to(".card", {
-                duration: 3.25, 
+                duration: 4.25, 
                 opacity: 0, 
                 x: 100, 
                 ease: "back.in"
@@ -117,20 +121,26 @@ function Draw() { // removes last index from each player's hand
 
         var card = document.createElement("div");
 		var value = document.createElement("div");
+        var value2 = document.createElement("div");
 		var suit = document.createElement("div");
+
 		card.className = "card";
 		value.className = "value";
+        value2.className = "value2";
 		suit.className = "suit " + p2Move.Suit;
 
 		value.innerHTML = p2Move.Value;
+        value2.innerHTML = p2Move.Value;
         suit.innerHTML = p2Move.Suit
+        
 		card.appendChild(value);
-		card.appendChild(suit);
+        card.appendChild(suit);
+        card.appendChild(value2);
 
 		$(`#p2Move`).append(card);
 
         gsap.to(".card", {
-            duration: 3.25 , 
+            duration: 4.25 , 
             opacity: 0, 
             x: 100, 
             ease: "back.in"
@@ -272,7 +282,9 @@ function Draw() { // removes last index from each player's hand
 
 $("#drawBtn").click(function () {
     Draw();
-    gsap.from("#moveResult", {duration: 1.5, x: 350});
+    gsap.to("#moveResult", {duration: 1, opacity: 100});
+    gsap.from("#p1Move", {duration: 1, x: 150});
+    gsap.from("#p2Move", {duration: 1, x: -150});
     
 })
 

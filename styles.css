@@ -35,11 +35,15 @@ body, html{
 
 }
 
+#p1Move, #p2Move {
+
+}
+
+
 #moveResult{
     color: #f3a712;
     font-family: 'Noto Sans', sans-serif;
     text-shadow: 1px 1px gray;
-    x: -150;
 }
 
 
@@ -84,36 +88,23 @@ body, html{
     padding: 0 70% 0 0;
     color: #f3a712;
 }
+.card .value2{
+	font-size:15pt;
+	font-family: sans-serif;
+    padding: 0 0 0 70%;
+    color: #f3a712;
+}
 
 .card .suit
 {
-	height: 100px;
+	height: 80px;
 	width: 90px;
     color: #f3a712;
-    padding: 25% 0 0 0;
+    font-size: 50px;
 
 }
 
-.card .diamonds
-{
-	background-position-y: 100px;
-}
 
-.card .hearts
-{
-	background-position-x: 90px;
-}
-
-.card .clubs
-{
-	background-position-x:90px;
-	background-position-y:100px;
-}
-
-.card .spades {
-    background-position-y: 90px;
-    background-position-x: 100px;
-}
 
 #drawBtn{
     border: none;
