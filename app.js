@@ -84,6 +84,9 @@ function Draw() { // removes last index from each player's hand
 		suit.className = "suit " + p1Move.Suit;
 
 		value.innerHTML = p1Move.Value;
+        suit.innerHTML = p1Move.Suit;
+
+        
 		card.appendChild(value);
 		card.appendChild(suit);
 
@@ -106,6 +109,7 @@ function Draw() { // removes last index from each player's hand
 		suit.className = "suit " + p2Move.Suit;
 
 		value.innerHTML = p2Move.Value;
+        suit.innerHTML = p2Move.Suit
 		card.appendChild(value);
 		card.appendChild(suit);
 
@@ -127,7 +131,7 @@ function Draw() { // removes last index from each player's hand
 
     function CheckCards() { // compares each player's move & adds cards to first index of winning player's hand. Checks the value of the card, regardless of suit.
 
-        // console.log("Checking Cards!");
+        console.log("Checking Cards!");
 
         CheckHand();
 
@@ -153,6 +157,7 @@ function Draw() { // removes last index from each player's hand
         else if (p1Move.Value == p2Move.Value) {
             console.log('%cWAR!!', 'background: #222; color: #FF4200');
             document.getElementById("moveResult").innerHTML = "WAR!";
+            
            
 
             War();
@@ -179,6 +184,7 @@ function Draw() { // removes last index from each player's hand
                 playerOneHand.unshift(p1Move, p2Move, p1WarMove[3], p1WarMove[2], p1WarMove[1], p1WarMove[0], p2WarMove[3], p2WarMove[2], p2WarMove[1], p2WarMove[0]);
                 console.log(`P1 ${playerOneHand.length} cards.`);
                 console.log(`P2 ${playerTwoHand.length} cards.`);
+                
 
             }
             else if (p1WarMove[3].Value < p2WarMove[3].Value) {
@@ -188,6 +194,7 @@ function Draw() { // removes last index from each player's hand
                 playerTwoHand.unshift(p2Move, p1Move, p2WarMove[3], p2WarMove[2], p2WarMove[1], p2WarMove[0], p1WarMove[3], p1WarMove[2], p1WarMove[1], p1WarMove[0])
                 console.log(`P1 ${playerOneHand.length} cards.`);
                 console.log(`P2 ${playerTwoHand.length} cards.`);
+                
             }
             else if (p1WarMove[3].Value === p2WarMove[3].Value) {
                 console.log("War Again!");
