@@ -93,11 +93,25 @@ function Draw() { // removes last index from each player's hand
 
 
 		$(`#p1Move`).append(card);
+        
+            
+              gsap.to(".card", {
+                duration: 3.25, 
+                opacity: 0, 
+                x: 100, 
+                ease: "back.in"
+              });
+            
+         
        
         
     }
 
     function renderP2Move(){
+
+        
+
+        
 
         document.getElementById("p2Move").innerHTML = "";
 
@@ -114,6 +128,15 @@ function Draw() { // removes last index from each player's hand
 		card.appendChild(suit);
 
 		$(`#p2Move`).append(card);
+
+        gsap.to(".card", {
+            duration: 3.25 , 
+            opacity: 0, 
+            x: 100, 
+            ease: "back.in"
+          });
+
+        
         
         
         
@@ -245,13 +268,12 @@ function Draw() { // removes last index from each player's hand
 
 };
 
-$("#dealBtn").click(function () {
-    Deal();
-})
 
 
 $("#drawBtn").click(function () {
     Draw();
+    gsap.from("#moveResult", {duration: 1.5, x: 350});
+    
 })
 
 
