@@ -2,6 +2,8 @@ body, html{
     height: 90%;
     width: 100%;
     background-color: #d4d6b9;
+    overflow-x: hidden;
+    overflow-y: hidden;
     
 }
 
