@@ -71,85 +71,92 @@ function Draw() { // removes last index from each player's hand
 
 
     console.table(`Player One: ${p1Move.Value} of ${p1Move.Suit} |:| Player Two: ${p2Move.Value} of ${p2Move.Suit}`);
-    
-    function renderP1Move(){
+
+    function renderP1Move() {
 
         document.getElementById("p1Move").innerHTML = "";
 
         var card = document.createElement("div");
-		var value = document.createElement("div");
+        var value = document.createElement("div");
         var value2 = document.createElement("div");
         var suit = document.createElement("div");
 
-		card.className = "card";
-		value.className = "value";
+        card.className = "card";
+        value.className = "value";
         value2.className = "value2";
-		suit.className = "suit " + p1Move.Suit;
+        suit.className = "suit " + p1Move.Suit;
 
-		value.innerHTML = p1Move.Value;
+        value.innerHTML = p1Move.Value;
         value2.innerHTML = p1Move.Value;
         suit.innerHTML = p1Move.Suit;
 
-        
-		card.appendChild(value);
-		card.appendChild(suit);
+
+        card.appendChild(value);
+        card.appendChild(suit);
         card.appendChild(value2);
 
 
-		$(`#p1Move`).append(card);
-        
-            
-              gsap.to(".card", {
-                duration: 4.25, 
-                opacity: 0, 
-                x: 100, 
-                ease: "back.in"
-              });
-            
-         
+        $(`#p1Move`).append(card);
+
+
+        gsap.to(".card", {
+            duration: 4.25,
+            opacity: 0,
+            x: 100,
+            ease: "back.in"
+        });
+
        
         
+
+
+
+
     }
 
-    function renderP2Move(){
+    function renderP2Move() {
 
-        
 
-        
+
+
 
         document.getElementById("p2Move").innerHTML = "";
 
         var card = document.createElement("div");
-		var value = document.createElement("div");
+        var value = document.createElement("div");
         var value2 = document.createElement("div");
-		var suit = document.createElement("div");
+        var suit = document.createElement("div");
 
-		card.className = "card";
-		value.className = "value";
+        card.className = "card";
+        value.className = "value";
         value2.className = "value2";
-		suit.className = "suit " + p2Move.Suit;
+        suit.className = "suit " + p2Move.Suit;
 
-		value.innerHTML = p2Move.Value;
+        value.innerHTML = p2Move.Value;
         value2.innerHTML = p2Move.Value;
         suit.innerHTML = p2Move.Suit
-        
-		card.appendChild(value);
+
+        card.appendChild(value);
         card.appendChild(suit);
         card.appendChild(value2);
 
-		$(`#p2Move`).append(card);
+        $(`#p2Move`).append(card);
 
         gsap.to(".card", {
-            duration: 4.25 , 
-            opacity: 0, 
-            x: 100, 
+            duration: 4.25,
+            opacity: 0,
+            x: 100,
             ease: "back.in"
-          });
+        });
+        
 
-        
-        
-        
-        
+    
+
+
+
+
+
+
     }
 
     renderP1Move();
@@ -162,10 +169,11 @@ function Draw() { // removes last index from each player's hand
 
 
 
+
     function CheckCards() { // compares each player's move & adds cards to first index of winning player's hand. Checks the value of the card, regardless of suit.
 
         console.log("Checking Cards!");
-
+     
         CheckHand();
 
         if (p1Move.Value > p2Move.Value) {
@@ -174,6 +182,8 @@ function Draw() { // removes last index from each player's hand
             playerOneHand.unshift(p1Move, p2Move);
             console.log(`P1 ${playerOneHand.length} cards.`);
             console.log(`P2 ${playerTwoHand.length} cards.`);
+            gsap.to("#moveResult", {duration: 1.5, opacity: 0 });
+
 
 
         }
@@ -185,13 +195,14 @@ function Draw() { // removes last index from each player's hand
             console.log(`P2 ${playerTwoHand.length} cards.`);
 
 
+
         }
 
         else if (p1Move.Value == p2Move.Value) {
             console.log('%cWAR!!', 'background: #222; color: #FF4200');
             document.getElementById("moveResult").innerHTML = "WAR!";
-            
-           
+
+
 
             War();
         }
@@ -217,7 +228,7 @@ function Draw() { // removes last index from each player's hand
                 playerOneHand.unshift(p1Move, p2Move, p1WarMove[3], p1WarMove[2], p1WarMove[1], p1WarMove[0], p2WarMove[3], p2WarMove[2], p2WarMove[1], p2WarMove[0]);
                 console.log(`P1 ${playerOneHand.length} cards.`);
                 console.log(`P2 ${playerTwoHand.length} cards.`);
-                
+
 
             }
             else if (p1WarMove[3].Value < p2WarMove[3].Value) {
@@ -227,7 +238,7 @@ function Draw() { // removes last index from each player's hand
                 playerTwoHand.unshift(p2Move, p1Move, p2WarMove[3], p2WarMove[2], p2WarMove[1], p2WarMove[0], p1WarMove[3], p1WarMove[2], p1WarMove[1], p1WarMove[0])
                 console.log(`P1 ${playerOneHand.length} cards.`);
                 console.log(`P2 ${playerTwoHand.length} cards.`);
-                
+
             }
             else if (p1WarMove[3].Value === p2WarMove[3].Value) {
                 console.log("War Again!");
@@ -281,13 +292,19 @@ function Draw() { // removes last index from each player's hand
 
 
 $("#drawBtn").click(function () {
-    Draw();
-    gsap.to("#moveResult", {duration: 1, opacity: 100});
-    gsap.from("#p1Move", {duration: 1, x: 150});
-    gsap.from("#p2Move", {duration: 1, x: -150});
     
-})
+    Draw();
+    gsap.from("#p1Move", { duration: 1, x: 150 });
+    gsap.from("#p2Move", { duration: 1, x: -150 });
+    gsap.from("#moveResult", {duration: 1, y: 500 });
+    gsap.to("#moveResult", {duration: 2.5, opacity: 1 });
+    
+    
+    
+    
 
+
+})
 
 
 

@@ -35,16 +35,17 @@ body, html{
 
 }
 
-#p1Move, #p2Move {
-
-}
-
 
 #moveResult{
     color: #f3a712;
     font-family: 'Noto Sans', sans-serif;
     text-shadow: 1px 1px gray;
+    opacity: 0;
+    
 }
+
+
+  
 
 
 #footer{
