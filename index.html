@@ -32,6 +32,30 @@
             <div id="playerTwoHand" class="playerTwoHand"></div>
             <div id="p1Move" class="p1Move"></div>
             <h2 id="moveResult" class="transform"> </h2>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>The Game of War!</h2>
+                    <p>It is quite easy to play! For ease, a deck of 52 cards has been shuffled randomly and 26 cards
+                        have been dealt to you (Player One) and your opponent (Player Two) each.</p>
+
+                    <p>Simply click the "Draw
+                        Card!" button and a card will be drawn from the top of your hand. Each player turns up a card at
+                        the same time and the player with the higher card takes both cards and they are placed on the
+                        bottom of your hand.</p>
+
+                    <p>If the cards are the same rank, it is War! Each player turns up one card face down and one card
+                        face up. The player with the higher cards takes both piles (six cards). If the turned-up cards
+                        are again the same rank, each player places another card face down and turns another card face
+                        up. The player with the higher card takes all 10 cards, and so on! (This logic coming soon...)
+                    </p>
+                </div>
+
+            </div>
             <div id="p2Move" class="p2Move"></div>
             <div id="p1WarMove"></div>
             <div id="p2WarMove"></div>
@@ -44,8 +68,10 @@
     </div>
     <div id="footer" class="container-5">
         <div id="buttonRow">
-
+            <button type="button" id="instructionsBtn" class="btn btn-primary" data-toggle="modal"
+                data-target="#exampleModalLong">INSTRUCTIONS</button>
             <button id="drawBtn" class="btn">DRAW CARD!</button>
+
 
         </div>
     </div>
