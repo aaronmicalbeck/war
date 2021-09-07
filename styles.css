@@ -169,3 +169,67 @@ body, html{
     justify-content: space-evenly
 }
 
+
+
+
+
+
+/* MEDIA QUERIES */
+
+
+
+/* /////////////////////////////////////////////////////// */
+
+/* MEDIA QUERIES */
+
+/* /////////////////////////////////////////////////////// */
+
+
+    
+  }
+  
+  @media screen and (max-width: 768px) {
+    body {
+      height: 100%;
+    }
+    
+  }
+  
+  @media screen and (max-width: 667px) {
+    body {
+      height: 100%;
+    }
+  
+    
+  }
+  
+  @media screen and (max-width: 414px) {
+    body {
+      height: 100%;
+    }
+  
+    
+  }
+  
+  @media screen and (max-width: 375px) {
+    body {
+      height: 100%;
+    }
+  
+    
+  }
+  
+  @media screen and (max-width: 320px) {
+    body {
+      height: 100%;
+    }
+
+    #drawBtn, #instructionsBtn{
+        
+        font-size: 15px;
+       
+    }
+  
+   
+  }
+ 
