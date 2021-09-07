@@ -30,7 +30,7 @@ body, html{
 #playTable{
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 90vh;
     flex-direction: column;
 
 }
